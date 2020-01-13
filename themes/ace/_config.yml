@@ -7,8 +7,8 @@
 highlight_theme: normal
 #header decoration
 slideshow: false 
-ribban_bg: false
-particle_bg: true 
+ribban_bg: true
+particle_bg: false 
 
 #CDN settings;
 bootstrapJS_CDN: https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js
@@ -51,7 +51,17 @@ friends: [
 navmenu: [
 {
    title: "menu1",
-   url: "#",        
+   url: "#menu1",
+   children: [
+   {
+       title: "menu1-1",
+       url: "#menu1-1"
+   },
+   {
+       title: "menu1-2",
+       url: "#menu1-2"
+   }
+   ]         
 },
 {
    title: "menu2",
