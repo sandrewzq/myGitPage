@@ -42,5 +42,6 @@ hexo deploy
 # 感谢及引用
 - [5分钟搞定个人博客-hexo](https://www.jianshu.com/p/390f202c5b0e) - But昊@简书
 - [hexo-theme-ace](https://github.com/kinggozhang/hexo-theme-ace) - kinggozhang@Github 
+- [exo-theme-ayer](https://github.com/Shen-Yu/hexo-theme-ayer) - Shen-Yu@Github
 
 
