@@ -17,7 +17,7 @@ jquery_CDN: https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Things that happen in real life are sometimes a hundred times more fascinating than anything a person could make up off the top of his head." - Leonardo DiCaprio
+sidebar-about-description: "Things that happen in real life are sometimes a hundred times more fascinating than anything a person could make up off the top of his head. - Leonardo DiCaprio"
 sidebar-avatar:       # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags

@@ -1,7 +1,7 @@
 <!-- Modified by Yu-Hsuan Yen -->
 <!-- Post Header -->
 <style type="text/css">
-    header.intro-header{
+  header.intro-header{
     }
    .post-heading{
     padding:20px;
@@ -21,151 +21,283 @@
       width: 100%; /* Set width to 100% */
       margin: auto;
     }
-
     .carousel-caption h3 {
       color: #fff !important;
     }
 <%}%>
+
+
+
+
+@media screen and (min-width: 600px) {
+  /* Hitokoto Page */
+  .hitokoto-fullpage {
+      width: 85%;
+  }  
+  /* Content Style */
+  .hitokoto-content {
+      /*border-radius: 2px;*/
+      padding: 80px 56px;
+      margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /*table{
+  *  *         border-collapse: collapse;
+  *   *             }
+  *    *                 td ,th  {
+  *     *                         border:1px   solid  #d7d7d7;
+  *      *                             }*/
+  /* Hitokoto Page */
+  .hitokoto-fullpage {
+      margin-bottom: 10vh !important;
+  }
+
+  .hitokoto-fullpage .word {
+      line-height: 2.6rem !important;
+  }
+
+  /* Content Style */
+  .hitokoto-content {
+      /*border-radius: 2px;*/
+      padding: 20px;
+  }
+}
+/* Hitokoto Page */
+.hitokoto-fullpage {
+position: relative;
+color: white;
+z-index: 1;
+margin-top: 10vh;
+margin-bottom: 10vh;
+margin-left: auto;
+margin-right: auto;
+font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'å¾®è½¯é›…é»‘', Arial, sans-serif;
+}
+.hitokoto-fullpage .bracket {
+font-size: 30px;
+}
+.hitokoto-fullpage .bracket.left {
+position: absolute;
+left: 0;
+top: 0;
+}
+.hitokoto-fullpage .bracket.right {
+position: absolute;
+right: 0;
+bottom: 0;
+}
+.hitokoto-fullpage .word {
+font-size: 2.3rem;
+text-align: center;
+line-height: 50px;
+word-break: normal;
+margin: 0;
+padding: 15px 50px;
+}
+.hitokoto-fullpage .author {
+font-size: 20px;
+color: rgba(255, 255, 255, 0.8);
+float: right;
+margin-top: 40px;
+}
+
+
+
+
+
+
 </style>
 
 <header id="headerid" class="w3-indigo intro-header" style="position:relative;">
-    <!-- Signature -->
-	
-        <div class="container">
-            <div class=" row" >
-			<% if (theme.ribban_bg || theme.particle_bg) {%>
-			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
-			<% } %>
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
-                <% if (is_post()) { %>
-                    <div class="post-heading" style="padding:40px">
-                        <div class="tags">
-                            <% page.tags.forEach(function(tag){ %>
-                              <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
-                            <% }) %>
-                        </div>
-                        <h1><%= page.title %></h1>
-                        <h2 class="subheading"><%= page.subtitle || "" %></h2>
-                        <span class="meta">
-                            Posted by <%- page.author || config.author %> on
-                            <%= page.date.format(config.date_format) %>
-                        </span>
-                    </div>
-                <% } else { %>
-				<% if (is_home() && theme.slideshow) { %>
-				<!-- slideshow -->
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					  <li data-target="#myCarousel" data-slide-to="1"></li>
-					  <li data-target="#myCarousel" data-slide-to="2"></li>
-					</ol>
+  <!-- Signature -->
 
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
-					  <div class="item active">
-						<img src="img/slideshow/slider1.jpg" alt="APP">
-						<div class="carousel-caption">
-						  <h3>Slider1</h3>
-						  <p>This description of s1.</p>
-						</div>      
-					  </div>
-
-					  <div class="item">
-						<img src="img/slideshow/slider2.jpg" alt="website">
-						<div class="carousel-caption">
-						  <h3>Slider2</h3>
-						  <p>This description of s2.</p>
-						</div>	
-					  </div>
-					
-					  <div class="item">
-						<img src="img/slideshow/slider3.jpg" alt="GZH">
-						<div class="carousel-caption">
-						  <h3>Slider3</h3>
-						  <p>This description of s3.</p>
-						</div>      
-					  </div>
-					</div>
-
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					  <span class="sr-only">Previous</span>
-					</a>
-					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					  <span class="sr-only">Next</span>
-					</a>
-				</div>
-                 <% } else { %>
-                    <div class="site-heading"  style="padding:40px">
-                        <h1><%= __(page.title || config.title) %></h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading"><%= __(page.description || config.subtitle || "") %></span>
-                    </div>
-                <% } %>
-                <% } %>
-                </div>
-            </div>
+  <div class="container">
+    <div class=" row">
+      <% if (theme.ribban_bg || theme.particle_bg) {%>
+      <canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%"
+        height="50%"></canvas>
+      <% } %>
+      <!-- <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;"> -->
+      <div class="" style="z-index:2;"> 
+        <% if (is_post()) { %>
+        <div class="post-heading" style="padding:40px">
+          <div class="tags">
+            <% page.tags.forEach(function(tag){ %>
+            <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+            <% }) %>
+          </div>
+          <h1><%= page.title %></h1>
+          <h2 class="subheading"><%= page.subtitle || "" %></h2>
+          <span class="meta">
+            Posted by <%- page.author || config.author %> on
+            <%= page.date.format(config.date_format) %>
+          </span>
         </div>
-  
+        <% } else { %>
+        <% if (is_home() && theme.slideshow) { %>
+        <!-- slideshow -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="img/slideshow/slider1.jpg" alt="APP">
+              <div class="carousel-caption">
+                <h3>Slider1</h3>
+                <p>This description of s1.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/slideshow/slider2.jpg" alt="website">
+              <div class="carousel-caption">
+                <h3>Slider2</h3>
+                <p>This description of s2.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/slideshow/slider3.jpg" alt="GZH">
+              <div class="carousel-caption">
+                <h3>Slider3</h3>
+                <p>This description of s3.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <% } else { %>
+        <!-- <div class="site-heading" style="padding-top:20px">
+          <h1><%= __(page.title || config.title) %></h1> -->
+          <!--<hr class="small">-->
+          <!-- <span class="subheading"><%= __(page.description || config.subtitle || "") %></span>
+        </div> -->
+
+        <div id="hitokoto" class="hitokoto-fullpage">
+          <div class="bracket left">『</div>
+          <div class="word" id="hitokoto_text"></div>
+          <div class="bracket right">』</div>
+          <div class="author" id="hitokoto_author"></div>
+        </div>
+
+
+        <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
 </header>
 <% if (theme.ribban_bg) {%>
 <script>
-    document.addEventListener('touchmove', function (e) {
-        e.preventDefault()
-    })
-	var hder = document.getElementById('headerid');
-    var c = document.getElementsByTagName('canvas')[0],
-        x = c.getContext('2d'),
-        pr = window.devicePixelRatio || 1,
-        w = window.innerWidth,
-		
-        h = window.innerHeight/2,
-        f = 90,
-        q,
-        m = Math,
-        r = 0,
-        u = m.PI*2,
-        v = m.cos,
-        z = m.random
-    c.width = w*pr
-    c.height = h*pr
-    x.scale(pr, pr)
-    x.globalAlpha = 0.6
-    function i(){
-	    var hder = document.getElementById('headerid');
-		if(hder)
-	    {
-   		h = hder.clientHeight;
-		c.height = h*pr;
-		}
-        x.clearRect(0,0,w,h)
-        q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-        while(q[1].x<w+f) d(q[0], q[1])
+  document.addEventListener('touchmove', function (e) {
+    e.preventDefault()
+  })
+  var hder = document.getElementById('headerid');
+  var c = document.getElementsByTagName('canvas')[0],
+    x = c.getContext('2d'),
+    pr = window.devicePixelRatio || 1,
+    w = window.innerWidth,
+
+    h = window.innerHeight / 2,
+    f = 90,
+    q,
+    m = Math,
+    r = 0,
+    u = m.PI * 2,
+    v = m.cos,
+    z = m.random
+  c.width = w * pr
+  c.height = h * pr
+  x.scale(pr, pr)
+  x.globalAlpha = 0.6
+
+  function i() {
+    var hder = document.getElementById('headerid');
+    if (hder) {
+      h = hder.clientHeight;
+      c.height = h * pr;
     }
-    function d(i,j){   
-        x.beginPath()
-        x.moveTo(i.x, i.y)
-        x.lineTo(j.x, j.y)
-        var k = j.x + (z()*2-0.25)*f,
-            n = y(j.y)
-        x.lineTo(k, n)
-        x.closePath()
-        r-=u/-50
-        x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-        x.fill()
-        q[0] = q[1]
-        q[1] = {x:k,y:n}
+    x.clearRect(0, 0, w, h)
+    q = [{
+      x: 0,
+      y: h * .7 + f
+    }, {
+      x: 0,
+      y: h * .7 - f
+    }]
+    while (q[1].x < w + f) d(q[0], q[1])
+  }
+
+  function d(i, j) {
+    x.beginPath()
+    x.moveTo(i.x, i.y)
+    x.lineTo(j.x, j.y)
+    var k = j.x + (z() * 2 - 0.25) * f,
+      n = y(j.y)
+    x.lineTo(k, n)
+    x.closePath()
+    r -= u / -50
+    x.fillStyle = '#' + (v(r) * 127 + 128 << 16 | v(r + u / 3) * 127 + 128 << 8 | v(r + u / 3 * 2) * 127 + 128)
+      .toString(16)
+    x.fill()
+    q[0] = q[1]
+    q[1] = {
+      x: k,
+      y: n
     }
-    function y(p){
-        var t = p + (z()*2-1.1)*f
-        return (t>h||t<0) ? y(p) : t
-    }
-    document.onclick = i
-    document.ontouchstart = i
-    i()
+  }
+
+  function y(p) {
+    var t = p + (z() * 2 - 1.1) * f
+    return (t > h || t < 0) ? y(p) : t
+  }
+  document.onclick = i
+  document.ontouchstart = i
+  i()
 </script>
 <% } %>
+
+<script defer>
+  (function hitokoto() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://v1.hitokoto.cn/?c=a');
+    xhr.send();
+    xhr.onreadystatechange = function (data) {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          var params = JSON.parse(data.currentTarget.response);
+
+          // 修改一言text
+          var hitokoto_text = params.hitokoto;
+          var text = document.querySelector('#hitokoto_text');
+          Array.isArray(text) ? text[0].innerText = hitokoto_text : text.innerText = hitokoto_text;
+          // 修改一言author
+          var hitokoto_author = params.from;
+          hitokoto_author = '-「'+hitokoto_author+'」';
+          var author = document.querySelector('#hitokoto_author');
+          Array.isArray(author) ? author[0].innerText = hitokoto_author : author.innerText = hitokoto_author;
+        } else {
+          console.log('Error pJS - XMLHttpRequest status: ' + xhr.status);
+          console.log('Error pJS - File config not found');
+        }
+      }
+    };
+  })()
+</script>
