@@ -1,6 +1,7 @@
 ---
 title: categories
-date: 2020-01-17 11:30:08
-type: "categories"
+date: 2020-01-17 16:54:55
+type: categories
 layout: "categories"
+category: categories
 ---

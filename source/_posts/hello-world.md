@@ -1,7 +1,6 @@
 ---
 title: Hello World
-category:
-- test
+category: test
 tags:
 - test
 ---
