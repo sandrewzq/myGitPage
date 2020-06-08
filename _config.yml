@@ -99,6 +99,9 @@ theme: ace
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/sandrewzq/sandrewzq.github.io
+  branch: master
+- type: git
+  repo: https://gitee.com/Sandrew/sandrew
   branch: master
