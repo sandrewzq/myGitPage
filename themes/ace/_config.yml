@@ -50,8 +50,8 @@ friends: [
 ## Nav Menus
 navmenu: [
 {
-   title: "menu1",
-   url: "#menu1",  
+   title: "明日方舟资料站",
+   url: "http://sandrew.gitee.io/arknights",  
 },
 {
    title: "menu2",
