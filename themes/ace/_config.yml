@@ -54,8 +54,8 @@ navmenu: [
    url: "http://sandrew.gitee.io/arknights",  
 },
 {
-   title: "menu2",
-   url: "#menu2",        
+   title: "free-software",
+   url: "http://sandrew.gitee.io/free-software",        
 },
 {
    title: "menu3",
